@@ -1,0 +1,86 @@
+@main-txt: #dddddd;
+@main-border: #666666;
+@main-link: #70c186;
+@main-bg: #333333;
+
+body {
+	background-color: #0b000f;
+	color: @main-txt;
+}
+
+a, a:link, a:hover, a:visited {
+	color: @main-link;
+}
+
+#header {
+	margin-top: 30px;
+}
+
+#footer {
+	margin-top: 30px;
+	border-top: @main-border 1px solid;
+	padding-top: 30px;
+	color: @main-txt;
+}
+
+.text-muted {
+	color: @main-txt;
+}
+
+.navbar-default .navbar-brand {
+	color: @main-txt;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: @main-link;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: @main-txt;
+}
+
+.jumbotron {
+	background-color: @main-bg;
+	border: @main-border 1px solid;
+}
+
+.navbar-default {
+	background-color: @main-bg;
+	border: @main-border 1px solid;
+	color: @main-txt;
+}
+
+.form-control {
+	background-color: @main-bg;
+	border: @main-border 1px solid;
+	color: @main-txt;
+}
+
+.btn-primary {
+	background-color: @main-border;
+	color: @main-txt;
+	border: @main-border;
+}
+
+.btn-primary:hover {
+	background-color: @main-link;
+}
+
+textarea.form-control:focus, select.form-control:focus, input.form-control:focus {
+  border-color: @main-link;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px @main-link;
+  outline: 0 none;
+}
+
+
+.list-group-item {
+	background-color: @main-bg;
+	border: @main-border 1px solid;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+	background-color: @main-bg;
+	border: @main-border 1px solid;
+}

@@ -1,0 +1,48 @@
+extends ../layouts/default
+
+block intro
+	.container
+		h1 Say hi
+		
+block content
+	.container
+		if enquirySubmitted
+			h3 Thanks mate :^)
+		else
+			.row
+				.col-sm-8.col-md-6
+					h3 Contact form
+					form(method='post')
+						input(type='hidden', name='action', value='contact')
+						.form-group(class=validationErrors.name ? 'has-error' : null)
+							label Name
+							input(type='text', name='name.full', value=formData['name.full'], placeholder="(optional)").form-control
+						.form-group(class=validationErrors.email ? 'has-error' : null)
+							label Email
+							input(type='email', name='email', value=formData.email, placeholder="(optional)").form-control
+						// .form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+						//	label What are you contacting us about?
+						//	select(name='enquiryType').form-control
+						//		option(value='') (select one)
+						//		each type in enquiryTypes
+						//			option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+						.form-group(class=validationErrors.message ? 'has-error' : null)
+							label Message
+							textarea(name='message', placeholder='Your message goes here.' rows=6, required).form-control= formData.message
+						.form-actions
+							button(type='submit').btn.btn-primary Send
+				.col-sm-4.col.md-6
+					h3 Alternative means
+					table.table
+						tbody
+							tr
+								td Email
+								td severin at protonmail dot ch
+							tr
+								td
+									a(href="https://tox.chat/", target="_blank") Tox
+								td
+									a(href="#" onclick="alert('58CEB0B6869AC6B0855BB88882BA474FF13DCF508B9919F87973605B1C7A5C76A90F56705A23')")
+										p 58CEB0B6869AC6B0855BB88882BA474FF13DCF
+										| 508B9919F87973605B1C7A5C76A90F56705A23
+								

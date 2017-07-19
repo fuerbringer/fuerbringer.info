@@ -5,13 +5,16 @@ require('dotenv').config();
 // Require keystone
 var keystone = require('keystone');
 
+// Website constants
+const siteConfig = require('./config/site-config');
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
 keystone.init({
-	'name': 'Personal Site by Severin Fürbringer',
-	'brand': 'Severin Fürbringer',
+	'name': siteConfig.name,
+	'brand': siteConfig.brand,
 
 	'less': 'public',
 	'static': 'public',

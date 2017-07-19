@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+const siteConfig = require('../../config/site-config');
 
 exports = module.exports = function(req, res) {
 
@@ -8,6 +9,8 @@ exports = module.exports = function(req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'about';
+	locals.title = siteConfig.pages.about.title + siteConfig.titleSeparator +
+		siteConfig.name;
 
 	// Render the view
 	view.render('about');

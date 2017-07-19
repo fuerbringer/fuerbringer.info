@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var Enquiry = keystone.list('Enquiry');
+const siteConfig = require('../../config/site-config');
 
 exports = module.exports = function(req, res) {
 
@@ -8,6 +9,8 @@ exports = module.exports = function(req, res) {
 
 	// Set locals
 	locals.section = 'contact';
+	locals.title = siteConfig.pages.contact.title + siteConfig.titleSeparator +
+		siteConfig.name;
 	// locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
 	locals.formData = req.body || {};
 	locals.validationErrors = {};

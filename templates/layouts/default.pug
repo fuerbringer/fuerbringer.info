@@ -11,6 +11,11 @@ html
 		meta(name="author" content=config.brand)
 		meta(name="description" content=config.name)
 			
+		if config.allowRobots
+			meta(name="robots" content="index,follow")
+		else
+			meta(name="robots" content="noindex,nofollow")
+			
 		title= title || 'Personal Site by Severin Fürbringer'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 

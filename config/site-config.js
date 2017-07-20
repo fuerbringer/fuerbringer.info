@@ -5,8 +5,11 @@ module.exports = {
   name: 'Personal Site by Severin Fürbringer',
   brand: 'Severin Fürbringer',
   titleSeparator: ' | ',
+  allowRobots: true,
+
   licenseLegal: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode',
   license: 'https://creativecommons.org/licenses/by-sa/4.0/',
+
   pages: {
     about: {
       title: 'About'

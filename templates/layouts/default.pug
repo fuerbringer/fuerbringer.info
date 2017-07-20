@@ -6,7 +6,7 @@ html
 	//- HTML HEADER
 	head
 		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
 		title= title || 'Personal Site by Severin Fürbringer'
@@ -19,6 +19,8 @@ html
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+		
+		link(rel="license" href=config.licenseLegal)
 
 		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 		//- Safely remove this block if you are not targeting IE8
@@ -92,10 +94,10 @@ html
 						a(href="/contact") Severin Fürbringer
 				.col-sm-5
 					p
-						a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank")
+						a(rel="license" href=config.license target="_blank")
 							img(alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png")
 						span  Licensed under 
-							a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank") CC-SA 4.0
+							a(rel="license" href=config.licenseLegal target="_blank") CC-SA 4.0
 				.col-sm-3
 					p.footer-right Source code on 
 						a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") GitHub

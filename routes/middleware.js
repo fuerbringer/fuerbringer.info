@@ -8,6 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+const siteConfig = require('../config/site-config');
 
 /**
 	Initialises the standard view locals
@@ -35,6 +36,7 @@ exports.initLocals = function(req, res, next) {
 		href: '/contact'
 	}, ];
 	res.locals.user = req.user;
+	res.locals.config = siteConfig;
 	next();
 };
 

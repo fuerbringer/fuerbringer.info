@@ -24,5 +24,4 @@ block content
 						if data.post.author
 							| by #{data.post.author.name.first}
 				section.blog-content
-					article.blog-content-main
-						| !{data.post.content.extended}
+					article.blog-content-main !{data.post.content.extended.html}

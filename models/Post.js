@@ -43,14 +43,14 @@ Post.add({
 	// image: { type: Types.CloudinaryImage },
 	content: {
 		brief: {
-			type: Types.Html,
+			type: Types.Markdown,
 			wysiwyg: true,
-			height: 150
+			height: 128
 		},
 		extended: {
-			type: Types.Html,
+			type: Types.Markdown,
 			wysiwyg: true,
-			height: 400
+			height: 768
 		},
 	},
 	categories: {

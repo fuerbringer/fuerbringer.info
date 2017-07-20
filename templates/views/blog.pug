@@ -16,7 +16,7 @@ mixin post(post)
 						|  
 			if post.author
 				| by #{post.author.name.first}
-		p!= post.content.brief
+		p!= post.content.brief.html
 		if post.content.extended
 			p.read-more: a(href='/blog/post/' + post.slug) Read more...
 

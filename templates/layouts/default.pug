@@ -123,7 +123,10 @@ html
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
 			
-		script(src='/js/main.js')
+		//- script(src='/js/main.js')
+		script
+			include ../../public/js/main.js
+		
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone

@@ -28,23 +28,27 @@ block content
 						//			option(value=type.value, selected=formData.enquiryType == type.value)= type.label
 						.form-group(class=validationErrors.message ? 'has-error' : null)
 							label Message
-							textarea(name='message', placeholder='Your message goes here.' rows=6, required).form-control= formData.message
+							textarea.textarea-contact(name='message', placeholder='Your message goes here.', required).form-control= formData.message
 						.form-actions
 							button(type='submit').btn.btn-primary Send
 				.col-sm-4.col.md-6
-					h3 Alternative means
-					table.table
-						tbody
-							tr
-								td Email
-								td severin&nbsp;AT&nbsp;fsfe&nbsp;DOT&nbsp;org
-							tr
-								td Keybase.io
-								td 
-									a(href="https://keybase.io/fuerbringer", target="_blank") Link
-							tr
-								td
-									a(href="https://tox.chat/", target="_blank") Tox
-									|  chat
-								td
-									a(href="/static/tox.txt" target="_blank") Show address
+					.row
+						.col-sm-12
+							h3 Alternative means
+							table.table
+								tbody
+									tr
+										td Email
+										td severin&nbsp;AT&nbsp;fsfe&nbsp;DOT&nbsp;org
+									tr
+										td Keybase.io
+										td 
+											a(href="https://keybase.io/fuerbringer", target="_blank") Link
+									tr
+										td
+											a(href="https://tox.chat/", target="_blank") Tox
+											|  chat
+										td
+											a(href="/static/tox.txt" target="_blank") Show address
+						.col-sm-12
+							img.img-responsive(src="/images/sel_gear.gif" alt="SEL imagery")

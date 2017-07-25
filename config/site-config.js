@@ -23,6 +23,9 @@ module.exports = {
     },
     home: {
       title: 'Welcome'
-    }
+    },
+    now: {
+      title: 'Now'
+    },
   }
 }

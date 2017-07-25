@@ -31,7 +31,8 @@ a, a:link, a:hover, a:visited {
 	color: @main-txt;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand,
+.navbar-default a.navbar-brand:hover {
 	color: @main-txt;
 }
 
@@ -40,6 +41,10 @@ a, a:link, a:hover, a:visited {
 }
 .navbar-default .navbar-nav > li > a:hover {
 	color: @main-txt;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background-color: @main-txt;
 }
 
 .jumbotron {
@@ -77,6 +82,7 @@ textarea.form-control:focus, select.form-control:focus, input.form-control:focus
 
 textarea.textarea-contact {
 	min-height: 210px;
+	resize: vertical;
 }
 
 

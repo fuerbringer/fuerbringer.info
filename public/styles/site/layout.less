@@ -4,6 +4,7 @@
 @main-border: #666666;
 @main-link: #70c186;
 @main-bg: #333333;
+@global-bg: #0b000f;
 
 body {
 	background-color: #0b000f;
@@ -13,6 +14,11 @@ body {
 
 a, a:link, a:hover, a:visited {
 	color: @main-link;
+}
+
+pre, code {
+	background-color: fade(@main-txt, 80%);
+	color: @global-bg;
 }
 
 #header {

@@ -6,6 +6,15 @@
 @main-bg: #333333;
 @global-bg: #0b000f;
 
+::selection {
+	background: @main-txt;
+	color: @global-bg;
+}
+::-moz-selection {
+	background: @main-txt;
+	color: @global-bg;
+}
+
 body {
 	background-color: #0b000f;
 	font-family: @main-font;

@@ -5,12 +5,22 @@ block content
 		.row
 			.col-sm-9
 				h1 Welcome
-				p.
-					Welcome to my wannabe cyberpunk personal page.
-					In the future I want to use this page to post interesting guides
-					and blog posts on technology I use daily.
-				a(href="https://lainchan.org" target="_blank")
-					img(src="/images/powered_by_soykaf.png" alt="soykafty image")
+				p Welcome to my wannabe cyberpunk personal page. Have a look at my 
+					a(href="/blog") blog
+					| . Maybe swing by my 
+					a(href="/about") about
+					|  and 
+					a(href="/now") now
+					|  pages to learn more about me.
+
 			.col-sm-3
-				a(href="/images/cyberwojak.jpg" target="_blank" title="Cyberwojak")
-					img.img-responsive(src='/images/cyberwojak_left.png')
+				a(href="https://lainchan.org" target="_blank")
+					img.img-responsive(src="/images/powered_by_soykaf.png" alt="soykafty image")
+	.container
+		if data.posts
+			h2 Latest blog posts
+			each post in data.posts
+				article
+					h3 
+						a(href="/blog/post/" + post.slug) #{post.title}
+					p !{post.content.brief.html}

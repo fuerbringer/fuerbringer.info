@@ -1,4 +1,5 @@
-var keystone = require('keystone');
+var keystone = require('keystone'),
+	Post = keystone.list('Post');
 const siteConfig = require('../../config/site-config');
 
 exports = module.exports = function(req, res) {
@@ -11,6 +12,20 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	locals.title = siteConfig.pages.home.title + siteConfig.titleSeparator +
 		siteConfig.name;
-	// Render the view
-	view.render('index');
+	locals.data = {
+		posts: []
+	};
+
+
+	Post.model.find()
+		.where('state', 'published')
+		.sort('-publishedAt')
+		.limit(siteConfig.indexBlogPreview.maxCount)
+		.exec(function(err, posts) {
+			locals.data.posts = posts;
+			
+			// Render the view
+			view.render('index');
+	});
+
 };

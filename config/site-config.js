@@ -11,6 +11,10 @@ module.exports = {
   license: 'https://creativecommons.org/licenses/by-sa/4.0/',
   licenseImage: 'https://i.creativecommons.org/l/by-sa/4.0/80x15.png',
 
+	indexBlogPreview: {
+		maxCount: 3
+	},
+
   pages: {
     about: {
       title: 'About'

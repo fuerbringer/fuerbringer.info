@@ -27,8 +27,17 @@ a, a:link, a:hover, a:visited {
 }
 
 pre, code {
-	background-color: fade(@main-txt, 80%);
+	background-color: @main-txt;
 	color: @global-bg;
+	font: monospace;
+}
+code::selection {
+	color: @main-txt;
+	background: @global-bg;
+}
+code::-moz-selection {
+	color: @main-txt;
+	background: @global-bg;
 }
 // Global styles END ////////////////////////////////////////
 

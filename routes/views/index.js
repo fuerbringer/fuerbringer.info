@@ -19,7 +19,7 @@ exports = module.exports = function(req, res) {
 
 	Post.model.find()
 		.where('state', 'published')
-		.sort('-publishedAt')
+		.sort('-publishedDate')
 		.limit(siteConfig.indexBlogPreview.maxCount)
 		.exec(function(err, posts) {
 			locals.data.posts = posts;

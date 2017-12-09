@@ -1,0 +1,4 @@
+run.config:
+  engine: nodejs
+data.mongo:
+  image: nanobox/mongodb:3.0

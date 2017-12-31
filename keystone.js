@@ -8,6 +8,9 @@ var keystone = require('keystone');
 // Website constants
 const siteConfig = require('./config/site-config');
 const cookieSecret = Math.random().toString(36).substring(2);
+const mongoUri = process.env.MONGO_URI
+  ? process.env.MONGO_URI
+  : 'mongodb://' + (process.env.DATA_MONGO_HOST ? process.env.DATA_MONGO_HOST : 'localhost') + '/gonano';
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -17,7 +20,7 @@ const cookieSecret = Math.random().toString(36).substring(2);
 keystone.init({
   'host': '0.0.0.0',
   'port': '3000',
-  'mongo': 'mongodb://' + (process.env.DATA_MONGO_HOST ? process.env.DATA_MONGO_HOST : 'localhost') + '/gonano',
+  'mongo': mongoUri,
   'cookie secret': cookieSecret,
   
 	'name': siteConfig.name,

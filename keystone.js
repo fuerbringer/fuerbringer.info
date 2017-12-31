@@ -17,7 +17,7 @@ const cookieSecret = Math.random().toString(36).substring(2);
 keystone.init({
   'host': '0.0.0.0',
   'port': '3000',
-  'mongo': 'mongodb://' + process.env.DATA_MONGO_HOST + '/gonano',
+  'mongo': 'mongodb://' + (process.env.DATA_MONGO_HOST ? process.env.DATA_MONGO_HOST : 'localhost') + '/gonano',
   'cookie secret': cookieSecret,
   
 	'name': siteConfig.name,

@@ -26,19 +26,31 @@ a, a:link, a:hover, a:visited {
 	color: @main-link;
 }
 
-pre, code {
-	background-color: @main-txt;
-	color: @global-bg;
+pre {
+  &:before {
+    content: 'Code Snippet';
+    float: right;
+  }
+	background-color: @main-bg;
+  border: @main-border 1px solid;
+	color: @main-txt;
+	font: monospace;
+
+  code {
+    border: none;
+    &:before {
+      content: '';
+    }
+  }
+}
+
+code {
+	background-color: transparent;
+  border: transparent;
+	color: @main-txt;
 	font: monospace;
 }
-code::selection {
-	color: @main-txt;
-	background: @global-bg;
-}
-code::-moz-selection {
-	color: @main-txt;
-	background: @global-bg;
-}
+
 // Global styles END ////////////////////////////////////////
 
 #header {

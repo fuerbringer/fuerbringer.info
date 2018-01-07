@@ -38,9 +38,18 @@ pre {
 
   code {
     border: none;
+    padding-right: 20px; /* Distance code from 'Code Snippet' label */
     &:before {
       content: '';
     }
+  }
+
+}
+
+pre.no-src-code {
+  /* Optional class for pre tags not containing source code */
+  &:before {
+    content: '';
   }
 }
 

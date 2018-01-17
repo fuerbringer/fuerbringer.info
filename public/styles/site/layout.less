@@ -12,7 +12,16 @@ body {
 	background-color: #0b000f;
 	font-family: @main-font;
 	color: @main-txt !important;
+  #body {
+    a:hover {
+      position: relative;
+      animation-name: glitch_anim;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+  }
 }
+
 
 .generic-center {
   margin-left: auto;
@@ -72,6 +81,12 @@ code {
 	border-top: @main-border 1px solid;
 	padding-top: 30px;
 	color: @main-txt;
+  a:hover {
+    position: relative;
+    animation-name: glitch_anim;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
 }
 
 .footer-right {

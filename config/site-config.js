@@ -9,7 +9,7 @@ module.exports = {
 
   licenseLegal: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode',
   license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-  contentCdnUrl: 'https://cdn.fuerbringer.info/',
+  licenseImage: 'https://licensebuttons.net/l/by-sa/4.0/80x15.png',
 
 	indexBlogPreview: {
 		maxCount: 3

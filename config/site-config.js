@@ -3,7 +3,7 @@
  */
 module.exports = {
   name: 'Personal Site by Severin Fürbringer',
-  brand: 'Severin Fürbringer',
+  brand: 'SF',
   titleSeparator: ' | ',
   allowRobots: true,
 

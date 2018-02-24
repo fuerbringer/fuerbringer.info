@@ -1,29 +1,22 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		.row
-			.col-sm-9
-				h1 Welcome
-				p Welcome to my wannabe cyberpunk personal page. Have a look at my 
-					a(href="/blog") blog
-					| . Maybe swing by my 
-					a(href="/about") about
-					|  and 
-					a(href="/now") now
-					|  pages to learn more about me.
+	h1 Welcome
+	p Welcome to my wannabe cyberpunk personal page. Have a look at my 
+		a(href="/blog") blog
+		| . Maybe swing by my 
+		a(href="/about") about
+		|  and 
+		a(href="/now") now
+		|  pages to learn more about me.
 
-			.col-sm-3
-				a(href="https://stallman.org" target="_blank")
-					img.img-responsive(src="/images/cyb_rms.png" alt="A green RMS." title="*Notices proprietary software* >:c")
-	.container
-		if data.posts
-			h2 Latest blog posts
-			each post in data.posts
-				article
-					h3 
-						a(href="/blog/post/" + post.slug) #{post.title}
-					p !{post.content.brief.html}
-			
-			br
-			a(href="/blog") List all posts...
+	if data.posts
+		h2 Latest blog posts
+		each post in data.posts
+			article
+				h3 
+					a(href="/blog/post/" + post.slug) #{post.title}
+				p !{post.content.brief.html}
+		
+		br
+		a(href="/blog") List all posts...

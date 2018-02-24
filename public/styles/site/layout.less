@@ -1,3 +1,6 @@
+@dark-bg: #312c32;
+@text-white: #fff;
+
 body {
   font-family: "gentium", "Times New Roman", serif;
   header {
@@ -6,8 +9,25 @@ body {
       font-size: 36px;
       text-decoration: none;
       padding: 4px 6px 3px 6px;
-      background-color: #312c32;
-      color: #fff;
+      background-color: @dark-bg;;
+      color: @text-white;;
     }
+    .navbar-menu {
+      .navbar-item:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+  footer {
+    section {
+      background-color: @dark-bg;
+      color: @text-white;
+      a, a:link, a:visited, a:hover {
+        color: @text-white;
+      }
+    }
+  }
+  section.section.is-small {
+    padding-top: 0;
   }
 }

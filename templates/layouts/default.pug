@@ -20,7 +20,7 @@ html
     link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
     //- CSS
-    link(href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css", rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css", rel="stylesheet")
     link(href="/styles/site.min.css", rel="stylesheet")
 
     //- This file provides the default styling for the KeystoneJS Content Editor
@@ -37,49 +37,53 @@ html
 
   //- HTML BODY
   body
-
     //- HEADER
     header
       section.section
-        div.container
-          a(href='/').brand
-            span= config.brand
-          div
-            ul
+        .container
+          a(href='/').brand: span= config.brand
+        .container
+          .navbar-menu
+            .navbar-start
               each link in navLinks
-                li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-            ul
-              if user
-                if user.canAccessKeystone
-                  li: a(href='/keystone') Open Keystone
-                li: a(href='/keystone/signout') Sign Out
-              else
-                li: a(href='/keystone/signin' rel='nofollow') λ
-
+                .navbar-item: a(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
     //- BODY
     #body
-      section.section
-        div.container
-          block intro
-          +flash-messages(messages)
-          block content
+      //- section.section.is-small
+      section.section.is-small
+        .container
+          .content
+            block intro
+            +flash-messages(messages)
+            block content
 
     //- FOOTER
     footer
       section.section
-        div.container
-          p By 
-            a(href="/contact") Severin Fürbringer
-          p
-            a(rel="license" href=config.license target="_blank")
-              img(alt="Creative Commons License" style="border-width:0" src=config.licenseImage)
-            span  Licensed under 
-              a(rel="license" href=config.licenseLegal target="_blank") CC-SA 4.0
-          p.footer-right Code on Git{
-            a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Hub
-            | ,
-            a(href="https://gitlab.com/fuerbringer/fuerbringer.info" target="_blank") Lab
-            | }
+        .container
+          .columns
+            .column
+              p.has-text-left By 
+                a(href="/contact") Severin Fürbringer
+            .column
+              p.has-text-centered
+                a(rel="license" href=config.license target="_blank")
+                  img(alt="Creative Commons License" style="border-width:0" src=config.licenseImage)
+            .column
+              p.has-text-right Code on Git{
+                a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Hub
+                | ,
+                a(href="https://gitlab.com/fuerbringer/fuerbringer.info" target="_blank") Lab
+                | }
+          .columns
+            .column
+              if user
+                if user.canAccessKeystone
+                  p: a(href='/keystone') Open Keystone
+                p: a(href='/keystone/signout') Sign Out
+              else
+                p.has-text-centered: a(href='/keystone/signin' rel='nofollow') λ
+
 
     //- The KeystoneJS Content Editor provides support for ks-editable data attributes,
     //- which generate links to edit content for users who can access Keystone

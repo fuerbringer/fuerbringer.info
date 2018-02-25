@@ -1,22 +1,14 @@
 extends ../layouts/default
 
 block content
-	h1 Welcome
-	p Welcome to my wannabe cyberpunk personal page. Have a look at my 
-		a(href="/blog") blog
-		| . Maybe swing by my 
-		a(href="/about") about
-		|  and 
-		a(href="/now") now
-		|  pages to learn more about me.
-
-	if data.posts
-		h2 Latest blog posts
-		each post in data.posts
-			article
-				h3 
-					a(href="/blog/post/" + post.slug) #{post.title}
-				p !{post.content.brief.html}
-		
-		br
-		a(href="/blog") List all posts...
+  h1 Hello
+  if data.posts
+    h2 Latest blog posts
+    each post in data.posts
+      article
+        h3 
+          a(href="/blog/post/" + post.slug) #{post.title}
+        p !{post.content.brief.html}
+    
+    br
+    a(href="/blog") List all posts...

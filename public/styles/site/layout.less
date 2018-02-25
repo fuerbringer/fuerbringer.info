@@ -1,29 +1,43 @@
+@header-bg: #eee;
 @dark-bg: #312c32;
+@white-bg: #fff;
 @text-white: #fff;
+
+html {
+  background-color: @dark-bg;
+}
 
 body {
   font-family: "gentium", "Times New Roman", serif;
+  background-color: @white-bg;
+
   header {
+    background-color: @header-bg;
+    font-family: "gentium bold", "Times New Roman", serif;
+
     a.brand {
-      font-family: "gentium bold", "Times New Roman", serif;
       font-size: 36px;
       text-decoration: none;
       padding: 4px 6px 3px 6px;
-      background-color: @dark-bg;;
-      color: @text-white;;
+      background-color: @dark-bg;
+      color: @header-bg;
     }
-    .navbar-menu {
-      .navbar-item:first-child {
-        padding-left: 0;
+    .tabs {
+      ul {
+        li:first-child {
+          a {
+            padding-left: 0;
+          }
+        }
       }
     }
   }
   footer {
     section {
       background-color: @dark-bg;
-      color: @text-white;
+      color: @header-bg;
       a, a:link, a:visited, a:hover {
-        color: @text-white;
+        color: @header-bg;
       }
     }
   }

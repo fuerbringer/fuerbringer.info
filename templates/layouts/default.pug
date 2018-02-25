@@ -43,14 +43,15 @@ html
         .container
           a(href='/').brand: span= config.brand
         .container
-          .navbar-menu
-            .navbar-start
+          .tabs
+            ul
               each link in navLinks
-                .navbar-item: a(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+                li(class=(section == link.key ? 'active' : null))
+                  a(href=link.href)= link.label
     //- BODY
     #body
       //- section.section.is-small
-      section.section.is-small
+      section.section
         .container
           .content
             block intro

@@ -2,14 +2,15 @@
  * Small config file to define website-related constants
  */
 module.exports = {
-  name: 'Personal Site by Severin Fürbringer',
+  author: 'Severin Fürbringer',
+  name: `Personal Site by Severin Fürbringer`,
   brand: 'SF',
-  titleSeparator: ' | ',
+  titleSeparator: ' ⇐ ',
   allowRobots: true,
 
   licenseLegal: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode',
   license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-  licenseImage: 'https://licensebuttons.net/l/by-sa/4.0/80x15.png',
+  licenseImage: 'images/cc_by_sa.png',
 
 	indexBlogPreview: {
 		maxCount: 3

@@ -1,14 +1,32 @@
 extends ../layouts/default
 
 block content
-  h1 Hello
-  if data.posts
-    h2 Latest blog posts
-    each post in data.posts
-      article
-        h3 
-          a(href="/blog/post/" + post.slug) #{post.title}
-        p !{post.content.brief.html}
-    
-    br
-    a(href="/blog") List all posts...
+  .columns
+    .column
+      h1 Hello
+  .columns
+    .column
+      p I don't have many (public) online presences, but here's just a few:
+    .column
+      .columns
+        .column
+          a(href="https://keybase.io/fuerbringer" title="fuerbringer on keybase.io" target="_blank")
+            img.image(src="images/keybase_logo.png")
+        .column
+          a(href="https://github.com/fuerbringer" title="fuerbringer on GitHub" target="_blank")
+            img.image(src="images/github_logo.png")
+        .column
+          a(href="https://gitlab.com/fuerbringer" title="fuerbringer on GitLab" target="_blank")
+            img.image(src="images/gitlab_logo.png")
+  .columns
+    .column
+      if data.posts
+        h2 Latest blog posts
+        each post in data.posts
+          article
+            h3 
+              a(href="/blog/post/" + post.slug) #{post.title}
+            p !{post.content.brief.html}
+        
+        br
+        a(href="/blog") List all posts...

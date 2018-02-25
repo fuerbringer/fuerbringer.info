@@ -1,54 +1,45 @@
 extends ../layouts/default
 
 block intro
-	.container
-		h1 Say hi
-		
+  .container
+    h1 Say hi
+    
 block content
-	.container
-		if enquirySubmitted
-			h3 Thanks mate :^)
-		else
-			.row
-				.col-sm-8.col-md-6
-					h3 Contact form
-					form(method='post')
-						input(type='hidden', name='action', value='contact')
-						.form-group(class=validationErrors.name ? 'has-error' : null)
-							label Name
-							input(type='text', name='name.full', value=formData['name.full'], placeholder="(optional)").form-control
-						.form-group(class=validationErrors.email ? 'has-error' : null)
-							label Email
-							input(type='email', name='email', value=formData.email, placeholder="(optional)").form-control
-						// .form-group(class=validationErrors.enquiryType ? 'has-error' : null)
-						//	label What are you contacting us about?
-						//	select(name='enquiryType').form-control
-						//		option(value='') (select one)
-						//		each type in enquiryTypes
-						//			option(value=type.value, selected=formData.enquiryType == type.value)= type.label
-						.form-group(class=validationErrors.message ? 'has-error' : null)
-							label Message
-							textarea.textarea-contact(name='message', placeholder='Your message goes here.', required).form-control= formData.message
-						.form-actions
-							button(type='submit').btn.btn-primary Send
-				.col-sm-4.col.md-6
-					.row
-						.col-sm-12
-							h3 Alternative means
-							table.table
-								tbody
-									tr
-										td Email
-										td severin&nbsp;AT&nbsp;fsfe&nbsp;DOT&nbsp;org
-									tr
-										td Keybase.io
-										td 
-											a(href="https://keybase.io/fuerbringer", target="_blank") Link
-									tr
-										td
-											a(href="https://tox.chat/", target="_blank") Tox
-											|  chat
-										td
-											a(href="/static/tox.txt" target="_blank") Show address
-						.col-sm-12
-							img.img-responsive(src="/images/sel_gear.gif" alt="SEL imagery")
+  .container
+    if enquirySubmitted
+      h3 Thanks mate :^)
+    else
+      .columns
+        .column
+          h3 Contact form
+          form(method='post')
+            input(type='hidden', name='action', value='contact')
+            .field(class=validationErrors.name ? 'has-error' : null)
+              label.label(for="name.full") Name
+              input.input(type='text', id="name.full" name='name.full', value=formData['name.full'], placeholder="(optional)")
+            .field(class=validationErrors.email ? 'has-error' : null)
+              label.label(for="email") Email
+              input.input(type='email', id="email", name='email', value=formData.email, placeholder="(optional)").form-control
+            .field(class=validationErrors.message ? 'has-error' : null)
+              label.label(for="message") Message
+              textarea.textarea(name='message', id="message", placeholder='Your message goes here.', required).form-control= formData.message
+            .field
+              button.button(type='submit').btn.btn-primary Send
+        .column
+          h3 Alternative means
+          table
+            tbody
+              tr
+                td Email
+                td severin&nbsp;AT&nbsp;fsfe&nbsp;DOT&nbsp;org
+              tr
+                td Keybase.io
+                td 
+                  a(href="https://keybase.io/fuerbringer", target="_blank") Link
+              tr
+                td
+                  a(href="https://tox.chat/", target="_blank") Tox
+                  |  chat
+                td
+                  a(href="/static/tox.txt" target="_blank") Show address
+          img(src="/images/sel_gear.gif" alt="SEL imagery")

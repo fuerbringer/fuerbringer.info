@@ -63,14 +63,14 @@ html
         .container
           .columns
             .column
-              p.has-text-left By 
+              p.footer-left.has-text-left By 
                 a(href="/contact") Severin Fürbringer
             .column
-              p.has-text-centered
+              p.footer-center.has-text-centered
                 a(rel="license" href=config.license target="_blank")
                   img(alt="Creative Commons License" style="border-width:0" src=config.licenseImage)
             .column
-              p.has-text-right Code on Git{
+              p.footer-right.has-text-right Code on Git{
                 a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Hub
                 | ,
                 a(href="https://gitlab.com/fuerbringer/fuerbringer.info" target="_blank") Lab
@@ -82,7 +82,7 @@ html
                   p: a(href='/keystone') Open Keystone
                 p: a(href='/keystone/signout') Sign Out
               else
-                p.has-text-centered: a(href='/keystone/signin' rel='nofollow') λ
+                p.footer-bottom.has-text-centered: a(href='/keystone/signin' rel='nofollow') λ
 
 
     //- The KeystoneJS Content Editor provides support for ks-editable data attributes,

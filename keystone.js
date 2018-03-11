@@ -26,7 +26,7 @@ keystone.init({
 	'name': siteConfig.name,
 	'brand': siteConfig.brand,
 
-	'less': 'public',
+	/*'less': 'public',*/
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',

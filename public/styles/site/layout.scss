@@ -1,15 +1,15 @@
-@header-bg: #eee;
-@dark-bg: #312c32;
-@white-bg: #fff;
-@text-white: #fff;
+$header-bg: #eee;
+$dark-bg: #312c32;
+$white-bg: #fff;
+$text-white: #fff;
 
 html {
-  background-color: @dark-bg;
+  background-color: $dark-bg;
 }
 
 body {
   font-family: "gentium", "Times New Roman", serif;
-  background-color: @white-bg;
+  background-color: $white-bg;
 
   img {
     -webkit-filter: grayscale(25%);
@@ -17,15 +17,15 @@ body {
   }
 
   header {
-    background-color: @header-bg;
+    background-color: $header-bg;
     font-family: "gentium bold", "Times New Roman", serif;
 
     a.brand {
       font-size: 36px;
       text-decoration: none;
       padding: 4px 6px 3px 6px;
-      background-color: @dark-bg;
-      color: @header-bg;
+      background-color: $dark-bg;
+      color: $header-bg;
     }
     .tabs {
       ul {
@@ -48,10 +48,10 @@ body {
   }
   footer {
     section {
-      background-color: @dark-bg;
-      color: @header-bg;
+      background-color: $dark-bg;
+      color: $header-bg;
       a, a:link, a:visited, a:hover {
-        color: @header-bg;
+        color: $header-bg;
       }
     }
   }

@@ -10,7 +10,7 @@ module.exports = {
 
   licenseLegal: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode',
   license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-  licenseImage: 'images/cc_by_sa.png',
+  licenseImage: '/images/cc_by_sa.png',
 
 	indexBlogPreview: {
 		maxCount: 3

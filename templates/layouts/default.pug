@@ -40,7 +40,9 @@ html
     header
       section.section
         .container
-          a(href='/' title=config.name).brand: span= config.brand
+          a(href='/' title=config.name)
+            img(src= config.brandImage alt= config.brand)
+
         .container
           .tabs
             ul

@@ -20,13 +20,6 @@ body {
     background-color: $header-bg;
     font-family: "gentium bold", "Times New Roman", serif;
 
-    a.brand {
-      font-size: 36px;
-      text-decoration: none;
-      padding: 4px 6px 3px 6px;
-      background-color: $dark-bg;
-      color: $header-bg;
-    }
     .tabs {
       ul {
         li:first-child {

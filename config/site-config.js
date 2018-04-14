@@ -5,7 +5,8 @@ module.exports = {
   author: 'Severin Fürbringer',
   name: `Personal Site by Severin Fürbringer`,
   brand: 'SF',
-  titleSeparator: ' ⇐ ',
+  brandImage: '/images/sf.png',
+  titleSeparator: ' – ',
   allowRobots: true,
 
   licenseLegal: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode',

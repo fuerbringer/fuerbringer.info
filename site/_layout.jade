@@ -1,34 +1,52 @@
 doctype
 html(lang="en")
   head
-    link(rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous")
+    link(rel="stylesheet" href="/stylesheets/pure.min.css")
     link(rel="stylesheet" href="/stylesheets/main.css")
-  body
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="author" content="TODO")
     meta(name="description" content="TODO")
     meta(name="robots" content="index,follow")
-    title Personal Site by Severin Fürbringer
-    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+    title TODO
+    link(rel="shortcut icon", href="/public/favicon.ico", type="image/x-icon")
   //- HTML BODY
   body
-    //- HEADER
-    header
-      p header
-    //- BODY
-    section
-      != yield
-    //- FOOTER
-    footer
-      p.footer-left.has-text-left By 
-        a(href="/contact") Severin Fürbringer
-      p.footer-center.has-text-centered
-        a(rel="license" href="TODO" target="_blank")
-          img(alt="Creative Commons License" style="border-width:0" src="TODO")
-      p.footer-right.has-text-right Code on Git{
-        a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Hub
-        | ,
-        a(href="https://gitlab.com/fuerbringer/fuerbringer.info" target="_blank") Lab
-        | }
+    .wrapper
+      //- HEADER
+      header
+        .header-inner
+          .pure-g
+            .pure-u-1-3
+              img.img-pure(src="/public/images/sf.png")
+            .pure-u-2-3
+              ul
+                li: a(href="#") Home
+                li: a(href="#") About
+                li: a(href="#") Now
+                li: a(href="#") Projects
+          .pure-g
+            .pure-u-1
+              hr.header-line
+          .pure-g
+            .pure-u-1
+              p.header-subtitle Blogs, memos and projects by Severin Fürbringer
+      //- BODY
+      section.content
+        .content-inner
+          != yield
+      //- FOOTER
+      footer
+        .footer-inner
+          .pure-g
+            .pure-u-1-3
+              p.footer-left By 
+                a(href="/contact") Severin Fürbringer
+            .pure-u-1-3
+              p.footer-middle
+                a(rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank")
+                  img(alt="Creative Commons License" style="border-width:0" src="/public/images/cc_by_sa.png")
+            .pure-u-1-3
+              p.footer-right
+                a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Page source

@@ -1,17 +1,118 @@
 body {
   font-family: "gentium", serif;
-  background: #f4f4f7;
   color: #444;
-  margin: 0;
 
-  h1 {
-    font-size: 65px;
-    line-height: 1.2em;
-    border-bottom: #CCC solid 1px;
-    padding: 20px 0;
+  .pure-g * {
+    font-family: "gentium", serif;
+  }
+  .wrapper {
+    h1 {
+      padding-left: 15px;
+      font-size: 28px;
+      line-height: 1.2em;
+      border-left: #ccc dotted 1px;
+    }
+
+    header {
+      background: #eee;
+      .header-inner {
+        width: 579px;
+        padding: 3rem 0 1.5rem 0;
+        margin: 0 auto 0 auto;
+      }
+      ul {
+        float: right;
+        display: inline-flex;
+        list-style-type: none;
+      }
+      li {
+      }
+      li a {
+        font-family: "gentium bold", serif;
+        color: #444;
+        text-decoration: none;
+        padding: 5px;
+      }
+      li a:hover {
+        border-bottom: #dbdbdb dotted 1px;
+      }
+      hr.header-line {
+        color: #dbdbdb;
+      }
+      p.header-subtitle {
+        margin-top: 0;
+      }
+    }
+
+    section.content {
+      .content-inner {
+        min-height: 70vh;
+        width: 579px;
+        margin: 0 auto 0 auto;
+        p {
+          line-height: 24px;
+        }
+      }
+    }
+
+    footer {
+      background-color: #312c32;
+      .footer-inner {
+        color: #eee;
+        width: 579px;
+        margin: 0 auto 0 auto;
+      }
+      .footer-inner {
+        a {
+          color: #eee;
+          text-decoration: none;
+        }
+        a:hover {
+          border-bottom: 1px solid #dbdbdb;
+        }
+        .footer-left {
+
+        }
+        .footer-middle {
+          text-align: center;
+          a:hover {
+            border: none;
+          }
+        }
+        .footer-right {
+          text-align: right;
+        }
+      }
+    }
   }
 
-  h3 {
-    font-weight: 300;
+  @media (max-width: 772px) {
+    .wrapper {
+      header {
+        .header-inner {
+          width: 90vw;
+        }
+      }
+      section.content {
+        .content-inner {
+          width: 90vw;
+          padding: 15px;
+        }
+      }
+      footer {
+        .footer-inner {
+          width: 90vw;
+          .footer-left {
+            text-align: left;
+          }
+          .footer-middle {
+            text-align: left;
+          }
+          .footer-right {
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }

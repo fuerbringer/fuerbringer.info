@@ -1,0 +1,29 @@
+{
+  "deploying-node-apps-with-docker-and-jenkins": {
+    "title": "Deploying Node apps with Docker and Jenkins",
+    "category": [
+      "docker",
+      "jenkins",
+      "continuous delivery"
+    ],
+    "description": "A short tutorial on how to deploy Dockerized web applications using Jenkins.",
+    "date": "7.4.2018"
+  },
+  "generating-passwords-in-the-terminal": {
+    "title": "Generating passwords in the terminal",
+    "category": [
+      "terminal"
+    ],
+    "description": "A bunch of useful terminal snippets to generate secure passwords on GNU/Linux and FreeBSD.",
+    "date": "4.8.2017"
+
+  },
+  "dockerizing-web-applications": {
+    "title": "Dockerizing Web Applications",
+    "category": [
+      "Docker"
+    ],
+    "description": "A step-by-step guide on how to keep your server clean by hosting your Node app inside a docker container.",
+    "date": "20.7.2017"
+  }
+}

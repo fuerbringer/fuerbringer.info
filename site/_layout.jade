@@ -1,16 +1,16 @@
 doctype
 html(lang="en")
   head
-    link(rel="stylesheet" href="/stylesheets/pure.min.css")
-    link(rel="stylesheet" href="/stylesheets/main.css")
+    title=public._data.pageTitle
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="author" content="TODO")
-    meta(name="description" content="TODO")
+    meta(name="author" content=public._data.author)
+    meta(name="description" content=public._data.description)
     meta(name="robots" content="index,follow")
-    title TODO
     link(rel="shortcut icon", href="/public/favicon.ico", type="image/x-icon")
+    link(rel="stylesheet" href="/stylesheets/main.css")
+    link(rel="stylesheet" href="/stylesheets/pure.min.css")
   //- HTML BODY
   body
     .wrapper
@@ -19,19 +19,19 @@ html(lang="en")
         .header-inner
           .pure-g
             .pure-u-1-3
-              img.img-pure(src="/public/images/sf.png")
+              a(href="/"): img.img-pure(src="/public/images/sf.png" alt=public._data.author + " Logo" title="Home")
             .pure-u-2-3
               ul
-                li: a(href="#") Home
-                li: a(href="#") About
-                li: a(href="#") Now
-                li: a(href="#") Projects
+                li: a(href="/posts" title=public._data.menuTitles.posts) Posts
+                li: a(href="/projects" title=public._data.menuTitles.projects) Projects
+                li: a(href="/about" title=public._data.menuTitles.about) About
+                li: a(href="/now" title=public._data.menuTitles.now) Now
           .pure-g
             .pure-u-1
               hr.header-line
           .pure-g
             .pure-u-1
-              p.header-subtitle Blogs, memos and projects by Severin Fürbringer
+              p.header-subtitle Personal site by Severin Fürbringer
       //- BODY
       section.content
         .content-inner
@@ -42,7 +42,7 @@ html(lang="en")
           .pure-g
             .pure-u-1-3
               p.footer-left By 
-                a(href="/contact") Severin Fürbringer
+                a(href="/contact")=public._data.author
             .pure-u-1-3
               p.footer-middle
                 a(rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank")

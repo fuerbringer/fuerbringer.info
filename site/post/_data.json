@@ -21,7 +21,7 @@
   "dockerizing-web-applications": {
     "title": "Dockerizing Web Applications",
     "category": [
-      "Docker"
+      "docker"
     ],
     "description": "A step-by-step guide on how to keep your server clean by hosting your Node app inside a docker container.",
     "date": "20.7.2017"

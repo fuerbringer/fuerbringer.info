@@ -1,11 +1,12 @@
-h2 Posts and memos
+h1 Posts and memos
 p I sometimes write small and technical memos. They serve a documentative purpose for myself on interesting topics I happen to be occupied with at the time.
 for post, slug in public.post._data
   article
-    h3.post-list-heading: a(href="/post/#{slug}")= post.title
+    h2.post-list-heading: a(href="/post/#{slug}")= post.title
     .post-subtext Posted on 
       span= post.date 
       | &nbsp;
       for cat in post.category
         span.post-category= cat
+        span &nbsp;
     .post-description= post.description

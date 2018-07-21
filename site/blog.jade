@@ -1,0 +1,9 @@
+h2 Blog posts and memos
+p asd
+for post, slug in public.posts._data
+  h3.post-list-heading: a(href="/posts/#{slug}")= post.title
+  .post-subtext Posted on 
+    span= post.date 
+    | &nbsp;
+    span.post-category= post.category
+  .post-description= post.description

@@ -7,10 +7,20 @@ body {
   }
   .wrapper {
     h1 {
+      font-family: "gentium bold", serif;
+      font-weight: normal;
       padding-left: 15px;
       font-size: 28px;
       line-height: 1.2em;
       border-left: #ccc dotted 1px;
+    }
+    h2 {
+      font-family: "gentium bold", serif;
+      font-weight: normal;
+    }
+    h3 {
+      font-family: "gentium bold", serif;
+      font-weight: normal;
     }
 
     header {
@@ -51,6 +61,27 @@ body {
         margin: 0 auto 0 auto;
         p {
           line-height: 24px;
+        }
+        .post-list-heading {
+          margin-bottom: 5px;
+          a, a:link {
+            color: #3273dc;
+            text-decoration: none;
+          }
+          a:hover {
+            color: #444;
+          }
+        }
+        .post-category {
+          color: #444;
+          background-color: #eee;
+          margin: 8px;
+          padding: 2px;
+          border-radius: 4px;
+          text-transform: capitalize;
+        }
+        .post-description {
+          margin: 5px 0 0 0;
         }
       }
     }

@@ -1,4 +1,12 @@
 {
+  "writing-nixos-modules": {
+    "title": "Writing Modules for NixOS",
+    "category": [
+      "nixos"
+    ],
+    "description": "Modularizing your NixOS configuration files for reusability.",
+    "date": "29.7.2018"
+  },
   "deploying-node-apps-with-docker-and-jenkins": {
     "title": "Deploying Node apps with Docker and Jenkins",
     "category": [

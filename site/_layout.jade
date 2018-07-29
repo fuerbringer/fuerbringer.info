@@ -19,7 +19,8 @@ html(lang="en")
         .header-inner
           .pure-g
             .pure-u-1-3
-              a(href="/"): img.img-pure(src="/public/images/sf.png" alt=public._data.author + " Logo" title="Home")
+              .header-logo
+                a(href="/"): img.img-pure(src="/public/images/sf.png" alt=public._data.author + " Logo" title="Home")
             .pure-u-2-3
               nav: ul
                 li: a(href="/projects" title=public._data.menuTitles.projects) Projects
@@ -48,7 +49,7 @@ html(lang="en")
             .pure-u-1-3
               p.footer-middle
                 a(rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank")
-                  img(alt="Creative Commons License" style="border-width:0" src="/public/images/cc_by_sa.png")
+                  img(alt="Creative Commons License" style="border-width:0" src="/public/images/cc_by_sa.svg")
             .pure-u-1-3
               p.footer-right
                 a(href="https://github.com/fuerbringer/fuerbringer.info" target="_blank") Page source

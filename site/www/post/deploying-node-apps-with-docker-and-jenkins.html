@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><title>Personal site by Severin Fürbringer</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="author" content="Severin Fürbringer"><meta name="description" content="Memos, posts and projects by Severin Fürbringer"><meta name="robots" content="index,follow"><link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="/stylesheets/main.css"><link rel="stylesheet" href="/stylesheets/pure.min.css"></head><body><div class="wrapper"><header><div class="header-inner"><div class="pure-g"><div class="pure-u-1-3"><a href="/"><img src="/public/images/sf.png" alt="Severin Fürbringer Logo" title="Home" class="img-pure"></a></div><div class="pure-u-2-3"><nav><ul><li><a href="/projects" title="Free projects I sometimes work on">Projects</a></li><li><a href="/posts" title="Memos, posts and oder writing">Posts</a></li><li><a href="/about" title="About me">About</a></li><li><a href="/now" title="What I'm currently occupied with">Now</a></li></ul></nav></div></div><div class="pure-g"><div class="pure-u-1"><hr class="header-line"></div></div><div class="pure-g"><div class="pure-u-1"><p class="header-subtitle">Personal site by <span class="header-subtitle-name">Severin Fürbringer</span></p></div></div></div></header><section class="content"><div class="content-inner"><article><p>Let&#39;s take a look on how to automate the deployment of Dockerized applications using Jenkins!</p>
+<h2>Environment</h2><p>It&#39;s assumed that you have following things ready.</p>
+<ul>
+<li>GNU/Linux Server*</li>
+<li>Docker on the server</li>
+<li>Jenkins with <code>GitHub Plugin</code> and <code>post-build</code> action triggers installed</li>
+<li>Dockerized web application with <code>Dockerfile</code> present</li>
+<li><em>Public</em> GitHub repository</li>
+<li><strong>Jenkins and Docker are running on the same host</strong></li>
+</ul>
+<p>* I&#39;m using <a href="https://nixos.org/nixos/nix-pills/">NixOS</a> as it&#39;s a declarative and reliable operating system, where it happens to be stupidly simple to quickly set up <a href="https://github.com/fuerbringer/nixfiles/blob/8b635480c1fadc199f7bb9ce8fe69f7faa3fda1e/orbit/configuration.nix#L49">Docker</a> and Jenkins.</p>
+<h2>Process</h2><p>With all things ready we&#39;re going to establish the following automated procedure.</p>
+<ol>
+<li>Jenkins detects PUSH to GitHub repository (<code>master</code> branch)</li>
+<li>Jenkins pulls changes locally.</li>
+<li>Jenkins builds application and a fresh docker container.</li>
+<li>Jenkins aborts should a build fail.</li>
+<li>Jenkins runs docker container with the newest changes.</li>
+<li>Reverse Proxy of your choice forwards traffic to the internet!</li>
+</ol>
+<h2>Deployment</h2><h3>Jenkins settings</h3><p>Log into Jenkins and create a <em>Freestyle Project</em> as you&#39;d do with any other application. For our usecase there&#39;s a couple of fields which <em>need</em> to be populated.</p>
+<ol>
+<li><code>General / GitHub / Project url</code> with your GitHub HTTP repo url.</li>
+<li><code>Source Code Management / Git</code> same as above with the branch set to <code>*/master</code>.</li>
+<li><code>Build Triggers / GitHub hook trigger for GITScm polling</code> activated.</li>
+<li><code>Build / Execute shell</code> with <code>docker build -t YOURCONTAINER .</code></li>
+<li><p><code>Post-build Actions</code> with the following settings:</p>
+<ul>
+<li><code>Log text</code> which looks for the success message in STDOUT, like <code>Successfully built</code>.</li>
+<li><p><code>Script</code> which removes the <code>YOURCONTAINER</code> container and redeploys the new container image:</p>
+<pre><code>docker rm -f YOURCONTAINER || true
+docker run -d --net=host --name YOURCONTAINER YOURCONTAINER</code></pre></li>
+<li>Enable <code>Run script only if all previous steps were successful</code> to ensure failed builds do not get deployed (Optional).</li>
+</ul>
+</li>
+</ol>
+<p>Assuming the rest of your Jenkins installation is set up correctly this should suffice so far.</p>
+<h3>GitHub settings</h3><p>Now GitHub has to let our Jenkins instance know when something&#39;s been pushed to <code>master</code>. Luckily Jenkins integration is available as a ready to use service for your repository. Navigate to <code>Settings / Integrations &amp; services</code> in your repository and select <code>Jenkins (GitHub plugin)</code>. The <code>Jenkins hook url</code> should be the same as defined in Jenkins:</p>
+<ul>
+<li><code>Manage Jenkins / Configure System / Jenkins URL</code> with something like <code>https://ci.example.com/github-webhook/</code>.</li>
+</ul>
+<p>Should be everything! Now once something gets pushed into master your Jenkins will be called and the build and deploy process executed.</p></article></div></section><footer><div class="footer-inner"><div class="pure-g"><div class="pure-u-1-3"><p class="footer-left">By <a href="/contact">Severin Fürbringer</a></p></div><div class="pure-u-1-3"><p class="footer-middle"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/public/images/cc_by_sa.png"></a></p></div><div class="pure-u-1-3"><p class="footer-right"><a href="https://github.com/fuerbringer/fuerbringer.info" target="_blank">Page source</a></p></div></div></div></footer></div></body></html>

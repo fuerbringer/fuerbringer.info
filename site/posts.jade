@@ -1,0 +1,12 @@
+h1 Posts and memos
+p I write small and technical memos for fun. They serve a documentative purpose for myself on interesting topics I happen to be occupied with at the time. When I'm tinkering with some technology and finally figure out how it works my findings may be posted here.
+for post, slug in public.post._data
+  article.post-preview
+    h2.post-list-heading: a(href="/post/#{slug}")= post.title
+    .post-subtext Posted on 
+      span= post.date 
+      | &nbsp;
+      for cat in post.category
+        span.post-category= cat
+        span &nbsp;
+    .post-description= post.description

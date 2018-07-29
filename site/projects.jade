@@ -1,0 +1,11 @@
+h1 Projects
+for projects, slug in public.project._data
+  h2=slug
+  for project, title in projects
+    .project-box
+      h3=title
+      p.project-description=project.description
+        br
+        i
+          img.img-pure.img-projects-repo(src="/public/images/github_logo.png" alt=public._data.githubImgAlt)
+          a(href=project.link target="_blank")=project.previewLink

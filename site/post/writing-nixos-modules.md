@@ -1,6 +1,6 @@
 # Declaring Modules for NixOS
 ## What is Nix and NixOS?
-Nix is an excellent declarative package manager which really shines as it appears in NixOS. An operating system which let's you fully declare what your system should look like and builds it according to that. Using its functional dedicated scripting language (DSL) Nix allows for a text based, modular and near infinite amount of possible operating system configurations. Webservers hosting hundreds of vhosts, Tor nodes, desktop workstations, _riced_ i3wm ThinkPad setups, NixOS does not get in the way.
+Nix is an excellent declarative package manager which really shines as it appears in NixOS. An operating system which lets you fully declare what your system should look like and builds it according to that. Using its functional dedicated scripting language (DSL) Nix allows for a text based, modular and near infinite amount of possible operating system configurations. Webservers hosting hundreds of vhosts, Tor nodes, desktop workstations, _riced_ i3wm ThinkPad setups, NixOS does not get in the way.
 In fact, I'm using NixOS for exactly that. A desktop and laptop configuration all in one. It's available [here](https://github.com/fuerbringer/nixfiles).
 
 _Note: This memo does not describe how to write packages / derivations for Nix._

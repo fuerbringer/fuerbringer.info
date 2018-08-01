@@ -6,9 +6,9 @@ In fact, I'm using NixOS for exactly that. A desktop and laptop configuration al
 _Note: This memo does not describe how to write packages / derivations for Nix._
 
 ## Modularity
-Imagine you could have the exact same setup across all of your machines with configurable aspects depending on whether the machine is mobile or not. Well, it's probably not hard to imagine, you just have to do it. But doing so might be rather annoying if done manually, or simply a waste of time. Some might immidiately suggest Ansible, and while that would work, I'd argue it's not the best option for this usecase. Let us now have a look at how elagantly NixOS solves this problem.
+Imagine you could have the exact same setup across all of your machines with configurable aspects depending on whether the machine is mobile or not. Well, it's probably not hard to imagine, you just have to do it. But doing so might be rather annoying if done manually, or simply a waste of time. Some might immidiately suggest Ansible, and while that would work, I'd argue it's not the best solution for this particular usecase. Let us now have a look at how elagantly NixOS solves this problem.
 ### configuration.nix
-Each machine has a _configuration.nix_ file. It defines the computers state. It might have something like this in it:
+Each machine has a _configuration.nix_ file. It defines the computer's state. It might have something like this in it:
 
 ```
 services = {
@@ -81,7 +81,7 @@ in {
 }
 ```
 
-So what do we have here? Think of it as a function we can import and call in our _configuration.nix_ and define whether we want mobile mode (_options.services.myModule.isMobile_) to be enabled. Well, it's exactly that! Assuming the above module is saved as _myModule.nix_ it can be imported into a _configuration.nix_ like so:
+So what do we have here? Think of it as a function we can import and call in our _configuration.nix_ and define whether we want mobile mode (_options.services.myModule.isMobile_) to be enabled. Assuming the above module is saved as _myModule.nix_ it can be imported into a _configuration.nix_ like so:
 
 ```
 { config, pkgs, ...  }:
@@ -96,7 +96,7 @@ So what do we have here? Think of it as a function we can import and call in our
 }
 ```
 
-And that's it! Another _configuration.nix_ for your desktop computer with _isMobile_ set to _false_ would disable Compton accordingly. As already mentioned, this allows for near infinite flexibility. With a bit more Nix language knowledge you could go on to dynamically generating differing _/etc_ configuration files defining on the module parameters.
+And that's it! Another _configuration.nix_ for your desktop computer with _isMobile_ set to _false_ would disable Compton accordingly. As already mentioned, this allows for near infinite flexibility. With a bit more Nix language knowledge you could go on to dynamically generating differing _/etc_ configuration files depending on the module parameters.
 
 If you need a complete example for this use case take a look at my [nixfiles](https://github.com/fuerbringer/nixfiles)!
 

@@ -1,8 +1,13 @@
 body {
     color: black;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
+}
+
+h1, h2, h3 {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 @media screen and (max-width: 599px) {
@@ -22,6 +27,7 @@ div#logo a {
     float: left;
     font-size: 18px;
     font-weight: bold;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     text-decoration: none;
 }
 
@@ -33,6 +39,7 @@ div#header #navigation a {
     color: black;
     font-size: 18px;
     font-weight: bold;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     margin-left: 12px;
     text-decoration: none;
     text-transform: uppercase;

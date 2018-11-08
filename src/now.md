@@ -2,8 +2,6 @@
 title: Now
 ---
 
-# Now
-
 A ["now" page](https://nownownow.com/about) describes what a person is doing at the moment in their life.
 
 - I'm currently back in school.

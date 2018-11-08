@@ -1,7 +1,7 @@
 ---
 title: About
 ---
-# About me
+
 Hello, I'm programmer from Zürich, CH who likes to study computer science and topics related to it. I used to work at a small web agency where I had the opportu
 nity to learn alot and be a part of a development team.
 

@@ -1,6 +1,6 @@
 ---
 title: Generating passwords in the terminal
-author: Severin
+author: Severin Fürbringer
 description: Shell oneliners for when you need more options than your password manager.
 ---
 

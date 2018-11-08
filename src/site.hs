@@ -7,7 +7,8 @@ import           Hakyll
 
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+    {- Resources -}
+    match "res/*" $ do
         route   idRoute
         compile copyFileCompiler
 

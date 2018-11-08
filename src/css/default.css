@@ -5,6 +5,12 @@ body {
     width: 600px;
 }
 
+@media screen and (max-width: 599px) {
+  body {
+    width: 100%;
+  }
+}
+
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;

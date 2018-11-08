@@ -5,6 +5,7 @@ description: Deploying Node apps with Docker and Jenkins
 ---
 
 # Deploying dockerized Node applications using Jenkins
+
 In this short tutorial we outline the steps needed to deploy dockerized applications from a Git repository to a server running Jenkins.
 
 ## Environment
@@ -55,7 +56,7 @@ Assuming the rest of your Jenkins installation is set up correctly this should s
 ### GitHub settings
 
 Now GitHub has to let our Jenkins instance know when something's been pushed to _master_. Luckily Jenkins integration is available as a ready to use service for your repository. Navigate to _Settings / Integrations & services_ in your repository and select _Jenkins (GitHub plugin)_. The _Jenkins hook url_ should be the same as defined in Jenkins:
-- _Manage Jenkins / Configure System / Jenkins URL_ with something like _https://ci.example.com/github-webhook/_
 
+- _Manage Jenkins / Configure System / Jenkins URL_ with something like _https://ci.example.com/github-webhook/_
 
 Should be everything! Now once something gets pushed into master your Jenkins will be called and the build and deploy process executed.

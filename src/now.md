@@ -6,12 +6,15 @@ A ["now" page](https://nownownow.com/about) describes what a person is doing at 
 
 - I'm currently back in school.
 
-## Learning
+## In progress
 
 There's always some interesting tools and frameworks I'm looking to get familiar with. Among those are currently:
 
-- LaTeX typesetting
 - A (purely) functional programming language
+
+### Done
+
+- LaTeX typesetting
 
 ## Other
 

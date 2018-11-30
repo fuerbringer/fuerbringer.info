@@ -62,18 +62,14 @@ main = hakyll $ do
     create [ "atom.xml" ] $ do
       route idRoute
       compile $ do
-        let feedCtx = postCtx `mappend`
-              constField "Description" "Post desc"
-
+        let feedCtx = postCtx
         posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
         renderAtom myFeedConfiguration feedCtx posts
 
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+postCtx = dateField "date" "%B %e, %Y" `mappend` defaultContext
 
 myFeedConfiguration :: FeedConfiguration
 myFeedConfiguration = FeedConfiguration

@@ -38,7 +38,7 @@ services = {
 };
 ```
 
-That Nix configuration gets us halfway to a ready to use i3wm desktop. It could almost be _git pull_ed to multiple machines and built! But what do you do if you don't want Compton with fancy effects running on your battery powered laptop? What we'd need is some kind of way to pack the above code into a module, a function if you will, and tell it, as a parameter, whether to be in mobile mode or not.
+That Nix configuration gets us halfway to a ready to use i3wm desktop. It could almost be git pulled to multiple machines and built! But what do you do if you don't want Compton with fancy effects running on your battery powered laptop? What we'd need is some kind of way to pack the above code into a module, a function if you will, and tell it, as a parameter, whether to be in mobile mode or not.
 
 ### Small module example
 

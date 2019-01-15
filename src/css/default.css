@@ -47,5 +47,6 @@ div.info {
   img.index-img {
     width: 20%;
     width: 20vw;
+    min-width: 60px;
   }
 }

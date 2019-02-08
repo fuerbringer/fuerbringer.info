@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="rss.css" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSS</title>
+    <description>fuerbringer.info rss</description>
+    <language>en-us</language>
+    <link>https://fuerbringer.info/rss.xml</link>
+    <atom:link href="https://fuerbringer.info/rss.xml" rel="self" type="application/rss+xml" />
+    
+  <item>
+    <title>Title for the first blog post</title>
+    <guid>https://fuerbringer/post/first.html</guid>
+    <pubDate>Thu, 07 Feb 2019 22:56:00 +0100</pubDate>
+    <description><![CDATA[<h1 id="first">First</h1>
+<p>Hello this is the first pos</p>]]></description>
+  </item>
+  </channel>
+</rss>

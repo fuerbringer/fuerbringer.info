@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+OUTDIR="./public"
+TPLDIR="./templates"
+PAGESDIR="./pages"
+
+for f in $PAGESDIR/*.md; do
+  HEAD=$(cat templates/head.tpl.htm)
+  TAIL=$(cat templates/tail.tpl.htm)
+  CONTENT=$(pandoc $f)
+  cat << EOF > $OUTDIR/$(basename $f | cut -f 1 -d '.').html
+$HEAD
+$CONTENT
+$TAIL
+EOF
+
+done
+
+cp $TPLDIR/*.css $OUTDIR

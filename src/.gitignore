@@ -1,5 +1,0 @@
-_cache
-_site
-dist
-site*
-!site.hs

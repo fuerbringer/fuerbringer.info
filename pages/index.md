@@ -1,8 +1,7 @@
 # Hello
 
 My name is Severin Fürbringer and this is my central online presence.  It
-serves as an aggregator of my projects, thoughts and links to other online
-profiles.
+serves as an aggregator of my projects, posts, and thoughts.
 
 I'm a programmer by profession, though currently back in school preparing for a
 degree in computer science.  I enjoy using unix-based operating systems aswell
@@ -18,7 +17,6 @@ An assorted and incomplete list of accounts I have.
 
 - [GitHub](https://github.com/fuerbringer)
 - [Keybase](https://keybase.io/fuerbringer)
-- [Hacker News](https://news.ycombinator.com/user?id=iwakura)
 
 ## Colleagues
 

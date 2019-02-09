@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-URL="https://fuerbringer/post"
-ITEMS=""
+TITLE="fuerbringer.info feed"
+DESC="fuerbringer.info: Posts about technology."
+BASEURL="https://fuerbringer"
+URL="$BASEURL/post"
+ITEMS="" # xml
 POSTSDIR="./posts"
-OUTDIR="./output"
+OUTDIR="./public"
 
 for f in $POSTSDIR/*.md; do
   POSTTITLE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
@@ -25,11 +28,11 @@ cat << EOF > $OUTDIR/rss.xml
 <?xml-stylesheet type="text/css" href="rss.css" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RSS</title>
-    <description>fuerbringer.info rss</description>
+    <title>$TITLE</title>
+    <description>$DESC</description>
     <language>en-us</language>
-    <link>https://fuerbringer.info/rss.xml</link>
-    <atom:link href="https://fuerbringer.info/rss.xml" rel="self" type="application/rss+xml" />
+    <link>$BASEURL/rss.xml</link>
+    <atom:link href="$BASEURL/rss.xml" rel="self" type="application/rss+xml" />
     $ITEMS
   </channel>
 </rss>

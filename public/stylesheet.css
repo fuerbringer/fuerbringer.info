@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Times New Roman", serif;
+  font-family: "Linux Libertine O", "Gentium Book Basic", "Times New Roman", Times, Cambria, Georgia, serif;
   font-size: 12pt;
   line-height: 18pt;
 }
@@ -22,8 +22,16 @@ a:hover {
   text-decoration: underline;
 }
 
+em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.post-listing em {
+  font-weight: 600;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
 }
 
 h1 {

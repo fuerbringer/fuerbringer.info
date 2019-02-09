@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+URL="https://fuerbringer/post"
+ITEMS=""
+POSTSDIR="./posts"
+OUTDIR="./public"
+POSTSOUTDIR="$OUTDIR/post"
+POSTLISTOUT="$OUTDIR/posts.html"
+
+HEADHTM=$(cat ./templates/head.tpl.htm)
+TAILHTM=$(cat ./templates/tail.tpl.htm)
+
+POSTLIST="" # html
+
+for f in $POSTSDIR/*.md; do
+  POSTTITLEANDNR=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
+  POSTTITLE=$(echo $POSTTITLEANDNR | cut -c 4-)
+  SLUG=$(basename $f | cut -f 1 -d '.')
+  DATE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.' | cut -c 4-).date)
+  DATEHUMAN=$(date -d "$DATE" "+%e. %B %Y")
+  DATEHUMANPREVIEW=$(date -d "$DATE" "+%d.%m.%y")
+  DATERFC=$(date -R -d "$DATE")
+  POSTCONTENT=$(pandoc $f)
+  
+  cat << EOF > $POSTSOUTDIR/$SLUG.html
+  $HEADHTM
+  <h1>$POSTTITLE</h1>
+  <em>Posted on $DATEHUMAN</em>
+  $POSTCONTENT
+  $TAILHTM
+EOF
+
+POSTLIST="$POSTLIST
+<li class=\"post-listing\">
+  <a href=\"/post/$SLUG.html\"><em>$POSTTITLE</em> ($DATEHUMANPREVIEW)</a>
+</li>
+"
+
+done
+
+POSTLIST="<ul>$POSTLIST</ul>"
+
+cat << EOF > $POSTLISTOUT
+$HEADHTM
+<h1>Posts</h1>
+$POSTLIST
+$TAILHTM
+EOF

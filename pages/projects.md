@@ -5,7 +5,7 @@ category.
 
 ## Pathfinding algorithm comparator
 
-As part of my baccalaureate project I have developed a web application that
+As part of my secondary school project I've developed a web application that
 compares a selected set of pathfinding algorithms against eachother in randomly
 generated mazes. For statistical purposes it measures execution time,
 iterations and path length of each algorithm for each run. The web application

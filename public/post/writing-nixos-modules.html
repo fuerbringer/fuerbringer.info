@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>fuerbringer.info feed</title>
-    <description>fuerbringer.info: Posts about technology.</description>
-    <language>en-us</language>
-    <link>https://fuerbringer/rss.xml</link>
-    <atom:link href="https://fuerbringer/rss.xml" rel="self" type="application/rss+xml" />
-    
-  <item>
-    <title>Writing NixOS modules</title>
-    <guid>https://fuerbringer/post/writing-nixos-modules.html</guid>
-    <pubDate>Sun, 29 Jul 2018 00:00:00 +0200</pubDate>
-    <description><![CDATA[<h2 id="what-is-nix-and-nixos">What is Nix and NixOS?</h2>
+  <!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>fuerbringer.info</title>
+    <meta name="description" content="Projects, Posts and Thoughts by Severin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <h1 class="page-header">
+        <a href="/">fuerbringer.info</a>
+      </h1>
+      <nav>
+        <a href="/projects.html">Projects</a>
+        <a href="/posts.html">Posts</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="content">
+  <h1>Writing NixOS modules</h1>
+  <em>Posted on 29. July 2018</em>
+  <h2 id="what-is-nix-and-nixos">What is Nix and NixOS?</h2>
 <p>Nix is an excellent declarative package manager which really shines as it appears in NixOS. An operating system which lets you fully declare what your system should look like and builds it according to that. Using its functional dedicated scripting language (DSL) Nix allows for a text based, modular and near infinite amount of possible operating system configurations. Webservers hosting hundreds of vhosts, Tor nodes, desktop workstations, <em>riced</em> i3wm ThinkPad setups, NixOS does not get in the way. In fact, I’m using NixOS for exactly that. A desktop and laptop configuration all in one. It’s available <a href="https://github.com/fuerbringer/nixfiles">here</a>.</p>
 <p><em>Note: This post does not describe how to write packages / derivations for Nix.</em></p>
 <h2 id="modularity">Modularity</h2>
@@ -92,7 +101,7 @@ in {
   };
 
 }</code></pre>
-<p>Think of it as a function we can import and call in our <em>configuration.nix</em> and define whether we want mobile mode (<em>options.services.myModule.isMobile</em>) to be enabled. Assuming the above module is saved as <em>myModule.nix</em> it can be imported into a <em>configuration.nix</em> like so:</p>
+<p>So what do we have here? Think of it as a function we can import and call in our <em>configuration.nix</em> and define whether we want mobile mode (<em>options.services.myModule.isMobile</em>) to be enabled. Assuming the above module is saved as <em>myModule.nix</em> it can be imported into a <em>configuration.nix</em> like so:</p>
 <pre><code>{ config, pkgs, ...   }:
 {
   imports = [
@@ -109,7 +118,11 @@ in {
 <ul>
 <li><a href="https://nixos.org/nixos/manual/index.html#sec-writing-modules">NixOS Manual, “Chapter 34. Writing NixOS Modules”</a></li>
 <li><a href="https://nixos.org/nixos/nix-pills/basics-of-language.html">Nix Pills, “Chapter 4. The Basics of the Language”</a></li>
-</ul>]]></description>
-  </item>
-  </channel>
-</rss>
+</ul>
+  </div>
+</div>
+<footer>
+  <p><a href="/rss.xml">RSS</a></p>
+</footer>
+</body>
+</html>

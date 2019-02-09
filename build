@@ -16,4 +16,5 @@ EOF
 
 done
 
-cp $TPLDIR/*.css $OUTDIR
+cat $TPLDIR/stylesheet.css >> $OUTDIR/style.css
+cat $TPLDIR/normalize.css >> $OUTDIR/style.css

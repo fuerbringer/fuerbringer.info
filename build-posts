@@ -12,6 +12,7 @@ TAILHTM=$(cat ./templates/tail.tpl.htm)
 
 POSTLIST="" # html
 
+# for i in `ls *.md | sort -r bla`; TODO
 for f in $POSTSDIR/*.md; do
   POSTTITLE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
   SLUG=$(basename $f | cut -f 1 -d '.')

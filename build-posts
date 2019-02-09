@@ -13,10 +13,9 @@ TAILHTM=$(cat ./templates/tail.tpl.htm)
 POSTLIST="" # html
 
 for f in $POSTSDIR/*.md; do
-  POSTTITLEANDNR=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
-  POSTTITLE=$(echo $POSTTITLEANDNR | cut -c 4-)
+  POSTTITLE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
   SLUG=$(basename $f | cut -f 1 -d '.')
-  DATE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.' | cut -c 4-).date)
+  DATE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').date)
   DATEHUMAN=$(date -d "$DATE" "+%e. %B %Y")
   DATEHUMANPREVIEW=$(date -d "$DATE" "+%d.%m.%y")
   DATERFC=$(date -R -d "$DATE")

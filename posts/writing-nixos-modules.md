@@ -1,4 +1,5 @@
 ## What is Nix and NixOS?
+
 Nix is an excellent declarative package manager which really shines as it
 appears in NixOS. An operating system which lets you fully declare what your
 system should look like and builds it according to that. Using its functional
@@ -12,6 +13,7 @@ exactly that. A desktop and laptop configuration all in one. It's available
 *Note: This post does not describe how to write packages / derivations for Nix.*
 
 ## Modularity
+
 Imagine you could have the exact same setup across all of your machines with
 configurable aspects depending on whether the machine is mobile or not. Well,
 it's probably not hard to imagine, you just have to do it. But doing so might
@@ -19,7 +21,9 @@ be rather annoying if done manually, or simply a waste of time. Some might
 immidiately suggest Ansible, and while that would work, I'd argue it's not the
 best solution for this particular usecase. Let us now have a look at how
 elagantly NixOS solves this problem.
+
 ### configuration.nix
+
 Each machine has a *configuration.nix* file. It defines the computer's state.
 It might have something like this in it:
 

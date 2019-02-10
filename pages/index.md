@@ -9,8 +9,6 @@ as configuring them to best suit my needs. The declarative nature of
 [NixOS](https://nixos.org) has been most enjoyable out of all of my experiences
 with GNU/Linux-based operating systems. Thus it's what I use nowdays.
 
-You can learn more about my computing environment here (TODO).
-
 ## Other online presences
 
 An assorted and incomplete list of accounts I have.

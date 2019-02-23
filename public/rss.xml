@@ -7,15 +7,24 @@
     <link>https://fuerbringer/rss.xml</link>
     <atom:link href="https://fuerbringer/rss.xml" rel="self" type="application/rss+xml" />
     
-  <item>
-    <title>Writing NixOS modules</title>
-    <guid>https://fuerbringer/post/writing-nixos-modules.html</guid>
-    <pubDate>Sun, 29 Jul 2018 00:00:00 +0200</pubDate>
-    <description><![CDATA[<h2 id="what-is-nix-and-nixos">What is Nix and NixOS?</h2>
+    <item>
+      <title>Managing shell scripts on NixOS</title>
+      <guid>https://fuerbringer/post/managing-shell-scripts-on-nixos.html</guid>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0100</pubDate>
+      <description><![CDATA[<h1 id="test">test</h1>
+<p>abc</p>]]></description>
+    </item>
+    <item>
+      <title>Writing NixOS modules</title>
+      <guid>https://fuerbringer/post/writing-nixos-modules.html</guid>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0200</pubDate>
+      <description><![CDATA[<h2 id="what-is-nix-and-nixos">What is Nix and NixOS?</h2>
 <p>Nix is an excellent declarative package manager which really shines as it appears in NixOS. An operating system which lets you fully declare what your system should look like and builds it according to that. Using its functional dedicated scripting language (DSL) Nix allows for a text based, modular and near infinite amount of possible operating system configurations. Webservers hosting hundreds of vhosts, Tor nodes, desktop workstations, <em>riced</em> i3wm ThinkPad setups, NixOS does not get in the way. In fact, I’m using NixOS for exactly that. A desktop and laptop configuration all in one. It’s available <a href="https://github.com/fuerbringer/nixfiles">here</a>.</p>
 <p><em>Note: This post does not describe how to write packages / derivations for Nix.</em></p>
 <h2 id="modularity">Modularity</h2>
-<p>Imagine you could have the exact same setup across all of your machines with configurable aspects depending on whether the machine is mobile or not. Well, it’s probably not hard to imagine, you just have to do it. But doing so might be rather annoying if done manually, or simply a waste of time. Some might immidiately suggest Ansible, and while that would work, I’d argue it’s not the best solution for this particular usecase. Let us now have a look at how elagantly NixOS solves this problem. ### configuration.nix Each machine has a <em>configuration.nix</em> file. It defines the computer’s state. It might have something like this in it:</p>
+<p>Imagine you could have the exact same setup across all of your machines with configurable aspects depending on whether the machine is mobile or not. Well, it’s probably not hard to imagine, you just have to do it. But doing so might be rather annoying if done manually, or simply a waste of time. Some might immidiately suggest Ansible, and while that would work, I’d argue it’s not the best solution for this particular usecase. Let us now have a look at how elagantly NixOS solves this problem.</p>
+<h3 id="configuration.nix">configuration.nix</h3>
+<p>Each machine has a <em>configuration.nix</em> file. It defines the computer’s state. It might have something like this in it:</p>
 <pre><code>services = {
   xserver = {
     enable = true;
@@ -110,6 +119,6 @@ in {
 <li><a href="https://nixos.org/nixos/manual/index.html#sec-writing-modules">NixOS Manual, “Chapter 34. Writing NixOS Modules”</a></li>
 <li><a href="https://nixos.org/nixos/nix-pills/basics-of-language.html">Nix Pills, “Chapter 4. The Basics of the Language”</a></li>
 </ul>]]></description>
-  </item>
+    </item>
   </channel>
 </rss>

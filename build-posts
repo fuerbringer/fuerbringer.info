@@ -12,30 +12,31 @@ TAILHTM=$(cat ./templates/tail.tpl.htm)
 
 POSTLIST="" # html
 
-# for i in `ls *.md | sort -r bla`; TODO
-for f in $POSTSDIR/*.md; do
-  POSTTITLE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
-  SLUG=$(basename $f | cut -f 1 -d '.')
-  DATE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').date)
-  DATEHUMAN=$(date -d "$DATE" "+%e. %B %Y")
-  DATEHUMANPREVIEW=$(date -d "$DATE" "+%d.%m.%y")
-  DATERFC=$(date -R -d "$DATE")
-  POSTCONTENT=$(pandoc $f)
-  
-  cat << EOF > $POSTSOUTDIR/$SLUG.html
-  $HEADHTM
-  <h1>$POSTTITLE</h1>
-  <em>Posted on $DATEHUMAN</em>
-  $POSTCONTENT
-  $TAILHTM
+for d in `ls $POSTSDIR | sort -r`; do
+  for f in `ls $POSTSDIR/$d/*.md`; do
+    POSTTITLE=$(cat $POSTSDIR/$d/$(basename $f | cut -f 1 -d '.').title)
+    SLUG=$(basename $POSTSDIR/$d/$f | cut -f 1 -d '.')
+    DATE=$(cat $POSTSDIR/$d/$(basename $f | cut -f 1 -d '.').date)
+    DATEHUMAN=$(date -d "$DATE" "+%e. %B %Y")
+    DATEHUMANPREVIEW=$(date -d "$DATE" "+%d.%m.%y")
+    DATERFC=$(date -R -d "$DATE")
+    POSTCONTENT=$(pandoc $f)
+
+    cat << EOF > $POSTSOUTDIR/$SLUG.html
+    $HEADHTM
+    <h1>$POSTTITLE</h1>
+    <em>Posted on $DATEHUMAN</em>
+    $POSTCONTENT
+    $TAILHTM
 EOF
-
-POSTLIST="$POSTLIST
-<li class=\"post-listing\">
-  <a href=\"/post/$SLUG.html\"><em>$POSTTITLE</em> ($DATEHUMANPREVIEW)</a>
-</li>
-"
-
+  
+  POSTLIST="$POSTLIST
+  <li class=\"post-listing\">
+    <a href=\"/post/$SLUG.html\"><em>$POSTTITLE</em> ($DATEHUMANPREVIEW)</a>
+  </li>
+  "
+  
+  done
 done
 
 POSTLIST="<ul>$POSTLIST</ul>"

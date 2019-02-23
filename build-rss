@@ -8,19 +8,21 @@ ITEMS="" # xml
 POSTSDIR="./posts"
 OUTDIR="./public"
 
-for f in $POSTSDIR/*.md; do
-  POSTTITLE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').title)
-  SLUG=$(basename $f | cut -f 1 -d '.')
-  DATE=$(cat $POSTSDIR/$(basename $f | cut -f 1 -d '.').date)
-  DATERFC=$(date -R -d "$DATE")
-  POSTCONTENT=$(pandoc $f)
-  ITEMS="$ITEMS
-  <item>
-    <title>$POSTTITLE</title>
-    <guid>$URL/$SLUG.html</guid>
-    <pubDate>$DATERFC</pubDate>
-    <description><![CDATA[$POSTCONTENT]]></description>
-  </item>"
+for d in `ls $POSTSDIR | sort -r`; do
+  for f in `ls $POSTSDIR/$d/*.md`; do
+    POSTTITLE=$(cat $POSTSDIR/$d/$(basename $f | cut -f 1 -d '.').title)
+    SLUG=$(basename $POSTSDIR/$d/$f | cut -f 1 -d '.')
+    DATE=$(cat $POSTSDIR/$d/$(basename $f | cut -f 1 -d '.').date)
+    DATERFC=$(date -R -d "$DATE")
+    POSTCONTENT=$(pandoc $f)
+    ITEMS="$ITEMS
+    <item>
+      <title>$POSTTITLE</title>
+      <guid>$URL/$SLUG.html</guid>
+      <pubDate>$DATERFC</pubDate>
+      <description><![CDATA[$POSTCONTENT]]></description>
+    </item>"
+  done
 done
 
 cat << EOF > $OUTDIR/rss.xml

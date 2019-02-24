@@ -145,7 +145,7 @@ If you need a complete example for this use case take a look at my
 [nixfiles](https://github.com/fuerbringer/nixfiles)!
 
 ## Further reading
-- [NixOS Manual, "Chapter 34. Writing NixOS
+1. [NixOS Manual, "Chapter 34. Writing NixOS
   Modules"](https://nixos.org/nixos/manual/index.html#sec-writing-modules)
-- [Nix Pills, "Chapter 4. The Basics of the
+2. [Nix Pills, "Chapter 4. The Basics of the
   Language"](https://nixos.org/nixos/nix-pills/basics-of-language.html)

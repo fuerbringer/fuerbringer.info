@@ -60,6 +60,10 @@ img {
   max-width: 75vw;
 }
 
+.post-last-generated {
+  margin-top: 30px;
+}
+
 .centered {
   text-align: center;
 }

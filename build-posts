@@ -20,6 +20,7 @@ for d in `ls $POSTSDIR | sort -r`; do
     DATEHUMAN=$(date -d "$DATE" "+%e. %B %Y")
     DATEHUMANPREVIEW=$(date -d "$DATE" "+%d.%m.%y")
     DATERFC=$(date -R -d "$DATE")
+    DATEGENERATED=$(date -u +"%d-%m-%Y %H:%M:%S")
     POSTCONTENT=$(pandoc $f)
 
     cat << EOF > $POSTSOUTDIR/$SLUG.html
@@ -27,9 +28,10 @@ for d in `ls $POSTSDIR | sort -r`; do
     <h1>$POSTTITLE</h1>
     <em>Posted on $DATEHUMAN</em>
     $POSTCONTENT
+    <p class="post-last-generated"><em>Post was last generated on $DATEGENERATED.</em></p>
     $TAILHTM
 EOF
-  
+
   POSTLIST="$POSTLIST
   <li class=\"post-listing\">
     <a href=\"/post/$SLUG.html\"><em>$POSTTITLE</em> ($DATEHUMANPREVIEW)</a>

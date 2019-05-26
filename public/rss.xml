@@ -8,6 +8,75 @@
     <atom:link href="https://fuerbringer/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>A better way to manage shell scripts on NixOS</title>
+      <guid>https://fuerbringer/post/better-way-to-manage-scripts-on-nixos.html</guid>
+      <pubDate>Sun, 19 May 2019 18:07:00 +0200</pubDate>
+      <description><![CDATA[<p>I’ve <a href="/post/managing-shell-scripts-on-nixos.html">previously</a> discussed how to package your own scripts into the NixOS system by using <code>mkDerivation</code>. Since then I’ve discovered a much more convenient way NixOS allows you to package shell scripts. The <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L58"><code>pkgs.writeScriptBin</code></a> function allows you to easily generate Nix packages in your <code>configuration.nix</code> by passing it the shell script name and text contents:</p>
+<pre><code>myscript = pkgs.writeScriptBin &quot;myscript&quot; &#39;&#39;
+    #!${pkgs.stdenv.shell}
+    echo &quot;Hello, world! This is my shell script.&quot;
+  &#39;&#39;;</code></pre>
+<p>In this context, <code>myscript</code> will be a package which we can add to our <code>environment.systemPackages</code> like so:</p>
+<pre><code>let
+  myscript = pkgs.writeScriptBin &quot;myscript&quot; &#39;&#39;
+      #!${pkgs.stdenv.shell}
+      echo &quot;Hello, world! This is my shell script.&quot;
+    &#39;&#39;;
+in
+{
+  # Your usual configuration.nix
+  # ...
+  environment.systemPackages = with pkgs; [ myscript ];
+}</code></pre>
+<p>The unofficial NixOS wiki<sup>1</sup> more great examples on this. It does however miss an example on how to package these scripts for multiple machines (configuration.nix files) so no redundancy occurs. For that I created a simple example<sup>2</sup> with the <code>bc-dl</code> script I used in earlier posts:</p>
+<pre><code>{ config, pkgs, ... }:
+
+let
+  bc-dl = pkgs.writeScriptBin &quot;bc-dl&quot; &#39;&#39;
+    #!${pkgs.stdenv.shell}
+    # This is a script that spawns a nix shell, installs python stuff with
+    # bandcamp-dl and downloads an album into a directory
+
+    nix-shell -p python36Packages.virtualenv bash --run bash &lt;&lt; EOF
+
+    WDIR=&quot;/tmp&quot; # Working directory
+    VEDIR=&quot;pip&quot; # Virtualenv directory
+
+    if [ -z &quot;$1&quot; ] || [ -z &quot;$2&quot; ]; then
+      echo &quot;Please provide all arguments: 
+        bc-dl [https://artist.bandcamp.com/album] [/path/to/dest/folder]&quot;
+      exit 1
+    fi
+
+    virtualenv /tmp/pip
+
+    source /tmp/pip/bin/activate
+
+    pip install bandcamp-downloader
+
+    # $1: bandcamp link
+    # $2: destination
+    bandcamp-dl --base-dir $2 $1
+
+    echo &quot;Done.&quot;
+
+    EOF
+  &#39;&#39;;
+in
+{
+  config = {
+    environment.systemPackages = with pkgs; [ bc-dl ];
+  };
+}</code></pre>
+<p>The above script resides in the same (or deeper) directory as <code>configuration.nix</code> and can simply be imported like this:</p>
+<pre><code>imports = [ ./pkgs/bc-dl ];</code></pre>
+<p>The advantage of this is that you can import this in many different <code>configuration.nix</code> files without having to embed the script itself and bloating up the machine configuration.</p>
+<ol type="1">
+<li><a href="https://nixos.wiki/wiki/Nix_Cookbook">NixOS Wiki Cookbook</a></li>
+<li><a href="https://github.com/fuerbringer/nixfiles/blob/master/pkgs/bc-dl/default.nix">bc-dl with pkgs.writeScriptBin example</a></li>
+</ol>]]></description>
+    </item>
+    <item>
       <title>Managing shell scripts on NixOS</title>
       <guid>https://fuerbringer/post/managing-shell-scripts-on-nixos.html</guid>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0100</pubDate>
@@ -19,7 +88,7 @@ lrwxrwxrwx 1 root root 66 Feb 23 10:26 env -&gt;
 /nix/store/68z2cvbzws1pn0z8dhgfkmws75r2z7gm-coreutils-8.29/bin/env
 </code></pre>
 <p>Nope! This is the territory of the Nix system. When you use NixOS, you shall play ball with Nix. Packages on NixOS are defined as so-called <em>derivations</em> on NixOS. They become available once imported into the environments packages. So why not just define our scripts as Nix derivations? This may sound complicated, but it’s not.</p>
-<p>I recently wrote a bash script<sup>1</sup> that spawns a virtualenv inside of a Nix shell to download Bandcamp<sup>2</sup> albums. Let’s see how that works as a deriation:</p>
+<p>I recently wrote a bash script<sup>1</sup> that spawns a virtualenv inside of a Nix shell to download Bandcamp<sup>2</sup> albums. Let’s see how that works as a derivation:</p>
 <pre><code>with import &lt;nixpkgs&gt; {};
 
 stdenv.mkDerivation rec {

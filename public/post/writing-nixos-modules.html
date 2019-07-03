@@ -8,16 +8,36 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
-    <div class="content-wrapper">
-      <h1 class="page-header">
-        <a href="/">fuerbringer.info</a>
-      </h1>
-      <nav>
-        <a href="/projects.html">Projects</a>
-        <a href="/posts.html">Posts</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-      <div class="content">
+    <div class="container header">
+      <div class="row">
+        <div class="column">
+          <header>
+            <span class="header-text">fuerbringer.info</span>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column navbar">
+            <ul class="navbar-list">
+              <li>
+                <a href="/">About</a>
+              </li>
+              <li>
+                <a href="/projects.html">Projects</a>
+              </li>
+              <li>
+                <a href="/posts.html">Posts</a>
+              </li>
+              <li>
+                <a href="/contact.html">Contact</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container content">
+      <div class="row">
+        <div class="column">
     <h1>Writing NixOS modules</h1>
     <em>Posted on 29. July 2018</em>
     <h2 id="what-is-nix-and-nixos">What is Nix and NixOS?</h2>
@@ -121,11 +141,17 @@ in {
 <li><a href="https://nixos.org/nixos/manual/index.html#sec-writing-modules">NixOS Manual, “Chapter 34. Writing NixOS Modules”</a></li>
 <li><a href="https://nixos.org/nixos/nix-pills/basics-of-language.html">Nix Pills, “Chapter 4. The Basics of the Language”</a></li>
 </ol>
-    <p class="post-last-generated"><em>Post was last generated on 26-05-2019 11:49:15.</em></p>
+    <p class="post-last-generated"><em>Post was last generated on 03-07-2019 00:37:58.</em></p>
     </div>
 </div>
-<footer>
-  <p><a href="/rss.xml">RSS</a></p>
-</footer>
+</div>
+<div class="container">
+  <div class="row">
+    <footer>
+      <hr>
+      <p class="center"><a href="/rss.xml">RSS</a></p>
+    </footer>
+  </div>
+</div>
 </body>
 </html>

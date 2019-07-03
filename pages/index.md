@@ -1,5 +1,7 @@
 # Hello
 
+<div class="row">
+<div class="two-thirds column">
 My name is Severin Fürbringer and this is my central online presence.  It
 serves as an aggregator of my projects, posts, and thoughts.
 
@@ -8,6 +10,11 @@ degree in computer science.  I enjoy using unix-like operating systems and
 configuring them to best suit my needs. The declarative and functional
 operating system [NixOS](https://nixos.org) is what powers most of my computers
 and makes reproducible deployments very straightforward.
+</div>
+<div class="one-third column">
+![](/res/lam.png)
+</div>
+</div>
 
 ## Other online presences
 

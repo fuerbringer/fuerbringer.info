@@ -8,19 +8,46 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
-    <div class="content-wrapper">
-      <h1 class="page-header">
-        <a href="/">fuerbringer.info</a>
-      </h1>
-      <nav>
-        <a href="/projects.html">Projects</a>
-        <a href="/posts.html">Posts</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-      <div class="content">
+    <div class="container header">
+      <div class="row">
+        <div class="column">
+          <header>
+            <span class="header-text">fuerbringer.info</span>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column navbar">
+            <ul class="navbar-list">
+              <li>
+                <a href="/">About</a>
+              </li>
+              <li>
+                <a href="/projects.html">Projects</a>
+              </li>
+              <li>
+                <a href="/posts.html">Posts</a>
+              </li>
+              <li>
+                <a href="/contact.html">Contact</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container content">
+      <div class="row">
+        <div class="column">
 <h1 id="hello">Hello</h1>
+<div class="row">
+<div class="two-thirds column">
 <p>My name is Severin Fürbringer and this is my central online presence. It serves as an aggregator of my projects, posts, and thoughts.</p>
 <p>I’m a programmer by profession, though currently back in school preparing for a degree in computer science. I enjoy using unix-like operating systems and configuring them to best suit my needs. The declarative and functional operating system <a href="https://nixos.org">NixOS</a> is what powers most of my computers and makes reproducible deployments very straightforward.</p>
+</div>
+<div class="one-third column">
+<p><img src="/res/lam.png" /></p>
+</div>
+</div>
 <h2 id="other-online-presences">Other online presences</h2>
 <p>An assorted list of accounts I have.</p>
 <ul>
@@ -35,8 +62,14 @@
 </ul>
 </div>
 </div>
-<footer>
-  <p><a href="/rss.xml">RSS</a></p>
-</footer>
+</div>
+<div class="container">
+  <div class="row">
+    <footer>
+      <hr>
+      <p class="center"><a href="/rss.xml">RSS</a></p>
+    </footer>
+  </div>
+</div>
 </body>
 </html>

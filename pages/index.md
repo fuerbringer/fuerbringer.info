@@ -21,7 +21,7 @@ and makes reproducible deployments very straightforward.
 An assorted list of accounts I have.
 
 - [GitHub](https://github.com/fuerbringer)
-- [Keybase](https://keybase.io/fuerbringer)
+- [Kattis](https://open.kattis.com/users/severin-fuerbringer)
 
 ## Colleagues
 

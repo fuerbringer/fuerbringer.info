@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+nix-shell -p python3 bash --run bash << EOF
+python -m http.server 8000 --bind 127.0.0.1 -d ./public
+EOF

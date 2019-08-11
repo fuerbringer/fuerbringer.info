@@ -1,3 +1,12 @@
+body {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+i, em {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
 /* Make sure images don't run outside containers */
 img {
   min-width: 200px;

@@ -16,6 +16,7 @@ EOF
 
 done
 
-cat $TPLDIR/normalize.css > $OUTDIR/style.css
+cat $TPLDIR/fonts.css > $OUTDIR/style.css
+cat $TPLDIR/normalize.css >> $OUTDIR/style.css
 cat $TPLDIR/skeleton.css >> $OUTDIR/style.css
 cat $TPLDIR/stylesheet.css >> $OUTDIR/style.css

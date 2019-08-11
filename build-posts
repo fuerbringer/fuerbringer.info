@@ -6,6 +6,7 @@ POSTSDIR="./posts"
 OUTDIR="./public"
 POSTSOUTDIR="$OUTDIR/post"
 POSTLISTOUT="$OUTDIR/posts.html"
+AUTHOR="Severin Fürbringer"
 
 HEADHTM=$(cat ./templates/head.tpl.htm)
 TAILHTM=$(cat ./templates/tail.tpl.htm)
@@ -26,7 +27,7 @@ for d in `ls $POSTSDIR | sort -r`; do
     cat << EOF > $POSTSOUTDIR/$SLUG.html
     $HEADHTM
     <h1>$POSTTITLE</h1>
-    <em>Posted on $DATEHUMAN</em>
+    <em>Posted on $DATEHUMAN by $AUTHOR</em>
     $POSTCONTENT
     <p class="post-last-generated"><em>Post was last generated on $DATEGENERATED.</em></p>
     $TAILHTM

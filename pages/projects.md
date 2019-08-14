@@ -25,9 +25,11 @@ neat to apply using image data. The result is a very crude CoffeeScript
 implementation of said idea. Only one sorting algorithms is implemented. That
 ofcourse being bubble sort.
 
+<figure>
 <video controls>
 <source src="https://u.teknik.io/LTQ0V.mp4" type="video/mp4">
 </video> 
+</figure>
 
 The idea would ideally be reimplemented in a faster compiled language. The web
 platform does not suit itself too well to this kind of application, though it
